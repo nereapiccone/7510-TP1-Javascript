@@ -4,7 +4,6 @@ var assert = require('assert');
 
 var Interpreter = require('../src/interpreter');
 
-
 describe("Interpreter", function () {
 
     var db = [
@@ -67,7 +66,9 @@ describe("Interpreter", function () {
             assert(interpreter.checkQuery('padre(mario, pepe)') === false);
         });
 
-        // TODO: Add more tests
+         it('padre(mario, alfonso) should be false', function () {
+            assert(interpreter.checkQuery('padre(mario, alfonso)') === false);
+        });
 
     });
 
@@ -83,11 +84,9 @@ describe("Interpreter", function () {
             assert(interpreter.checkQuery('hijo(pepe, juan)'));
         });
 
-        // TODO: Add more tests
-
+        it('hija(maria, alfonso) should be false', function () {
+            assert(interpreter.checkQuery('hija(maria, alfonso)') === false);
+        });
     });
 
-
 });
-
-
